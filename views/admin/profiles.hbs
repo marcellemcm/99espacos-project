@@ -1,0 +1,52 @@
+<div class="add-margin">
+
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/area">Área Administrador</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/area/hosts">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/area/spots">Espaços</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="text-center prof-hosts">
+        <div class="card-body">
+            <div class="title-add">USERS</div>
+        </div>
+        <div id="cards-admin-host">
+            {{#each users}}
+            <a href="/area/hosts/{{_id}}">
+                <h3>{{this.firstname}} {{this.lastname}}</h3>
+            </a>
+            <form action="/area/hosts/{{this._id}}/delete" method="post">
+                <button class="btn btn-primary" type="submit">Deletar anunciante</button>
+            </form>
+            <hr>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-sm-12 d-flex justify-content-center align-items-center">
+                <p class='footer-second-text'><a href="/comofunciona">Como Funciona</a></p>
+                <p class='footer-second-text'><a href="/signup">Anuncie seu Espaço</a></p>
+                <p class='footer-second-text'><a href="/termosecondicoes">Termos de Uso</a></p>
+                <p class='footer-second-text'><a href="/area">Área Restrita</a></p>
+                <p class='footer-second-text'><a href="mailto:projeto99espacos@gmail.com">Fale Conosco</a></p>
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,34 @@
+<div class="add-margin">
+  <form id="form" action="/signup" method="POST">
+    <h2 id="title-signup">Signup</h2>
+    <br>
+
+    <label for="firstname">Nome</label><br>
+    <input type="text" required name="firstname">
+
+    <label for="lastname">Sobrenome</label><br>
+    <input type="text" required name="lastname">
+
+    <label for="username">Username</label><br>
+    <input type="text" required name="username">
+
+    <label for="email">E-mail</label><br>
+    <input type="email" required name="email">
+
+    <label for="password">Senha</label><br>
+    <input type="password" required name="password"
+      placeholder="********">
+
+    {{#if message}}
+        <div class="error-message">{{ message }}</div>
+    {{/if}}
+    <br><br>
+
+    <p>Ao criar uma conta você concorda com nossos <a href="/termosecondicoes">Termos e condições</a> </p>
+
+    <button type="submit">Sign up</button>
+
+    <p class="account-message"> Já está cadastrado?
+    <a href="/login">Login</a>
+  </form>
+</div>

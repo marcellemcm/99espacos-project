@@ -1,0 +1,71 @@
+<div class="add-margin">
+
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/area">Área Administrador</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/area/hosts">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/area/spots">Espaços</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="spotslist">
+            <div>
+                <img id="pic-size" src="{{spot.picture}}" alt="">
+            </div>
+            <div>
+                <h1>{{spot.title}}</h1>
+            </div>
+            <hr>
+            <div>
+                <h3>Descrição:</h3>
+                <p>{{spot.description}}</p>
+
+                <h3>Formato:</h3>
+                <p>{{spot.format}}</p>
+                <h3>Capacidade:</h3>
+                <p>{{spot.capacity}} pessoas</p>
+                <h3>Equipamentos:</h3>
+                <p>{{spot.equipments}}</p>
+                <h3>Conveniências:</h3>
+                <p>{{spot.conveniences}}</p>
+                <h3>Horário de funcionamento:</h3>
+                <h5>{{spot.businessHours}}</h5>
+                <hr>
+                <h3>Endereço:</h3>
+                <p>{{spot.address}}</p>
+                <h3>Contatos para Reserva:</h3>
+                <p><a href="mailto:{{spot.email}}">{{spot.email}}</a></p>
+                <p>{{spot.phone}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row d-flex">
+            <div class="col-sm-12 d-flex justify-content-center align-items-center">
+                <p class='footer-second-text'><a href="/comofunciona">Como Funciona</a></p>
+                <p class='footer-second-text'><a href="/signup">Anuncie seu Espaço</a></p>
+                <p class='footer-second-text'><a href="/termosecondicoes">Termos de Uso</a></p>
+                <p class='footer-second-text'><a href="/area">Área Restrita</a></p>
+                <p class='footer-second-text'><a href="mailto:projeto99espacos@gmail.com">Fale Conosco</a></p>
+            </div>
+        </div>
+    </div>
+</footer>

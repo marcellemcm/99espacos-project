@@ -1,0 +1,103 @@
+<div class="add-margin">
+  {{#if user}}
+
+  <div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" href="/area">Área Anunciante</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/area/user/{{user._id}}">Meus Dados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/area/espacos">Espaços</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/area/espacos/add">Adicionar Espaço</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="card-body">
+      <div class="title-add">EDITE OS DADOS DO SEU ESPAÇO</div>
+    </div>
+
+    <form id="form" action="/area/espacos/edit/{{spot._id}}" method="POST">
+      <input type="hidden" name="_id" value="{{spot.owner}}">
+      <label for="title">Título do Local:</label><br>
+      <input type="text" name="title" placeholder="Insira o nome do seu espaço" value='{{spot.title}}'>
+
+      <label for="description">Descrição</label><br>
+      <input type="text" name="description" placeholder="" value='{{spot.description}}'>
+      <br>
+
+      <label for="phone">Telefone para contato:</label><br>
+      <input type="text" name="phone" placeholder="(XX) XXXX-XXXX" value='{{spot.phone}}'>
+      <br>
+
+      <label for="email">E-mail para reserva:</label><br>
+      <input type="text" name="email" placeholder="" value='{{spot.email}}'>
+      <br>
+
+      <label for="exampleFormControlSelect1">Selecione o Formato:</label>
+      <select class="form-control" id="exampleFormControlSelect1" name='format' value='{{spot.format}}'>
+        <option selected>Formato</option>
+        <option value='Auditório'>Auditório</option>
+        <option value='Formato U'>Formato U</option>
+        <option value='Livre'>Livre</option>
+        <option value='Sala de Aula'>Sala de Aula</option>
+        <option value='Sala de Reunião'>Sala de Reunião</option>
+        <option value='Mesa Redonda'>Mesa Redonda</option>
+        <option value="CoWorking">CoWorking</option>
+      </select><br>
+
+      <label for="capacity">Capacidade:</label><br>
+      <input type="number" name="capacity" placeholder="Número de pessoas que seu espaço comporta"
+        value='{{spot.capacity}}'>
+      <br>
+
+      <label for="exampleFormControlSelect1">Equipamentos Disponíveis:</label>
+      <input type="text" name="equipments" value='{{spot.equipments}}'
+        placeholder="Insira os equipamentos disponíveis do espaço"><br>
+
+      <label for="exampleFormControlSelect1">Conveniências (ar condicionado, luz natural):</label>
+      <input type="text" name="conveniences" value='{{spot.conveniences}}'
+        placeholder="Insira as conveniências disponíveis do espaço"><br>
+
+      <label for="exampleFormControlSelect1">Atualize o endereço do espaço:</label>
+      <div class="col">
+        <label for="">Endereço:</label>
+        <input type="text" name="address" placeholder="" value='{{spot.address}}'>
+      </div>
+
+      <label for="businessHours">Informe Seu Horário de Funcionamento:</label>
+      <input type="text" name="businessHours" value='{{spot.businessHours}}'
+        placeholder="Ex: Segunda-feira a Sexta-feira das 09:00 às 18:00">
+      <br>
+
+      <button type="submit">Atualizar Dados do Espaço</button>
+
+    </form>
+
+  </div>
+  {{/if}}
+</div>
+
+<footer>
+  <div class="container">
+    <div class="row d-flex">
+      <div class="col-sm-12 d-flex justify-content-center align-items-center">
+        <p class='footer-second-text'><a href="/comofunciona">Como Funciona</a></p>
+        <p class='footer-second-text'><a href="/signup">Anuncie seu Espaço</a></p>
+        <p class='footer-second-text'><a href="/termosecondicoes">Termos de Uso</a></p>
+        <p class='footer-second-text'><a href="/area">Área Restrita</a></p>
+        <p class='footer-second-text'><a href="mailto:projeto99espacos@gmail.com">Fale Conosco</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
