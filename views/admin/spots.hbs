@@ -1,0 +1,68 @@
+<div class="add-margin">
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/area">Área Administrador</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/area/hosts">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/area/spots">Espaços</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="prof-hosts">
+        <div class="card-body">
+
+            <div class="title-add">ESPAÇOS</div>
+        </div>
+        <div id="cards-admin-host">
+            {{#each spots}}
+            <div class="card mb-3 ml-5" style="max-width: 570px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="{{this.picture}}" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"> <a href="/area/spots/{{this._id}}">{{this.title}}</a></h5>
+                            <p class="card-text">Formato: {{this.format}}</p>
+                            <p class="card-text">Capacidade: {{this.capacity}} pessoas</p>
+
+                            <p class="card-text"><small class="text-muted">{{this.address}}</small></p>
+                            <div class="text-center d-flex align-item-center justify-content-around">
+                                <form action="/area/spots/{{this._id}}/delete" method="post">
+                                    <button class="btn btn-primary" type="submit">Retirar Espaço</button>
+                                </form>
+                                <form action="/area/spots/{{_id}}/edit" method="get">
+                                    <button class="btn btn-primary" type="submit">Atualizar Dados</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="row d-flex">
+      <div class="col-sm-12 d-flex justify-content-center align-items-center">
+        <p class='footer-second-text'><a href="/comofunciona">Como Funciona</a></p>
+        <p class='footer-second-text'><a href="/signup">Anuncie seu Espaço</a></p>
+        <p class='footer-second-text'><a href="/termosecondicoes">Termos de Uso</a></p>
+        <p class='footer-second-text'><a href="/area">Área Restrita</a></p>
+        <p class='footer-second-text'><a href="mailto:projeto99espacos@gmail.com">Fale Conosco</a></p>
+      </div>
+    </div>
+  </div>
+</footer>

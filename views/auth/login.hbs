@@ -1,0 +1,23 @@
+<div class="add-margin">
+  <form id="form" action="/login" method="POST">
+    <h2 id="title-signup">Login</h2>
+    <br>
+
+    <label for="username">Username:</label>
+    <input type="text" required name="username">
+
+    <label for="password">Senha</label><br>
+    <input type="password" required name="password" placeholder="********">
+
+    {{#if message}}
+    <div class="error-message">{{ message }}</div>
+    {{/if}}
+
+    <br><br>
+    <button type="submit">Log in</button>
+
+    <p class="account-message"> Ainda não está cadastrado?
+      <a href="/signup">Sign up</a>
+
+  </form>
+</div>

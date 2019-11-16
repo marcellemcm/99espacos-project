@@ -1,0 +1,118 @@
+<div class="add-margin">
+  {{#if user}}
+
+  <div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" href="/area">Área Anunciante</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/area/user/{{user._id}}">Meus Dados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/area/espacos">Espaços</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/area/espacos/add">Adicionar Espaço</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+
+      </ul>
+    </div>
+    <div class="card-body">
+      <div class="title-add">ADICIONE SEU ESPAÇO</div>
+    </div>
+    <div class="divCards">
+      <div id="form">
+        <label for="title">Busque o endereço do espaço e clique para adicionar ao formulário:</label><br>
+        <input type="text" id="address-input" name="address" placeholder="Digite o endereço e confirme." />
+        <button id="map-form" onclick="codeAddress()">Buscar endereço</button>
+        <div id="address-sugestion"></div>
+      </div>
+
+      <form id="form" action="/area/espacos/add" method="post" enctype="multipart/form-data">
+        <label for="picture">Upload da imagem do espaço</label>
+        <input type="file" name="photo">
+
+        <label for="title">Título do Local:</label><br>
+        <input type="text" name="title" placeholder="Insira o nome do seu espaço | Local do espaço">
+
+        <label for="title">Descrição do Local:</label><br>
+        <input type="text" name="description" placeholder="Insira uma descrição do seu espaço">
+        <br>
+
+        <label for="phone">Telefone para contato:</label><br>
+        <input type="text" name="phone" placeholder="(XX) XXXX-XXXX">
+        <br>
+
+        <label for="email">E-mail para contato:</label><br>
+        <input type="text" name="email" placeholder="">
+        <br>
+
+        <label for="exampleFormControlSelect1">Selecione o Formato:</label>
+        <select class="form-control" id="exampleFormControlSelect1" name='format'>
+          <option selected>Formato</option>
+          <option value='Auditório'>Auditório</option>
+          <option value='Formato U'>Formato U</option>
+          <option value='Livre'>Livre</option>
+          <option value="Sala de Aula">Sala de Aula</option>
+          <option value="Sala de Reunião">Sala de Reunião</option>
+          <option value="Mesa Redonda">Mesa Redonda</option>
+          <option value="CoWorking">CoWorking</option>
+        </select><br>
+
+        <label for="capacity">Capacidade:</label><br>
+        <input type="number" name="capacity" placeholder="Número de pessoas que seu espaço comporta">
+        <br>
+
+        <label for="equipments">Equipamentos Disponíveis:</label>
+        <input type="text" name="equipments" placeholder="Insira os equipamentos disponíveis do espaço">
+        <br>
+
+        <label for="conveniences">Conveniências (ar condicionado, luz natural):</label>
+        <input type="text" name="conveniences" placeholder="Insira as conveniências disponíveis do espaço">
+        <br>
+
+        <label for="exampleFormControlSelect1">Informe Seu Endereço:</label>
+        <div class="col">
+          <label for="">Endereço:</label>
+          <input type="text" id="address-inp" class="form-control" name='address' placeholder="Endereço do espaço">
+        </div>
+        <div class="col">
+          <label for="">Latitude:</label>
+          <input type="text" id="lat" class="form-control" name='lat' placeholder="Latitude">
+        </div>
+        <div class="col">
+          <label for="">Longitude:</label>
+          <input type="text" id="lng" class="form-control" name='lng' placeholder="Longitude">
+        </div>
+
+
+
+        <label for="businessHours">Informe Seu Horário de Funcionamento:</label>
+        <input type="text" name="businessHours" placeholder="Ex: Segunda-feira a Sexta-feira das 09:00 às 18:00">
+        <br>
+
+        <button type="submit">Criar Espaço</button>
+      </form>
+    </div>
+  </div>
+  <script src="https://maps.googleapis.com/maps/api/js?key={{googlekey}}"></script>
+  {{/if}}
+</div>
+<footer>
+  <div class="container">
+    <div class="row d-flex">
+      <div class="col-sm-12 d-flex justify-content-center align-items-center">
+        <p class='footer-second-text'><a href="/comofunciona">Como Funciona</a></p>
+        <p class='footer-second-text'><a href="/signup">Anuncie seu Espaço</a></p>
+        <p class='footer-second-text'><a href="/termosecondicoes">Termos de Uso</a></p>
+        <p class='footer-second-text'><a href="/area">Área Restrita</a></p>
+        <p class='footer-second-text'><a href="mailto:projeto99espacos@gmail.com">Fale Conosco</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
